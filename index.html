@@ -4,3 +4,18 @@ layout: default
 
 <h1>{{ site.email }}</h1>
 <p>This is a paragraph.</p>
+
+<section class="row" id="recent-blog">
+<div class="col s12 m10 offset-m1 l8 offset-l2">
+<h2>Recent Blogs</h2>
+{% for post in site.posts limit:3 %}
+
+<article class="card hoverable">
+<div class="card-content">
+<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+<h3 class="card-title truncate"><a href="{{ post.url }}">{{ post.title | escape }}</a></h3>
+{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | truncate: 200}}{% endif %}
+</div>
+</article>
+{% endfor %}
+<div class="right-align"> 
