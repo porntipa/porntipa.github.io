@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <title>{{ site.title }}</title>
-</head>
+{% include head.html %}
 
 <body>
-    <header>
-        <nav>Home</nav>
-    </header>
+    {% include header.html %}
     <main>
-      {{ content }}
+        {{ content }}
     </main>
-    <footer>This is footer</footer>
-
+    {% include footer.html %}
 </body>
 
 </html>
