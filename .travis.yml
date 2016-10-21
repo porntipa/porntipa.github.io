@@ -5,7 +5,7 @@ jdk: oraclejdk8
 install:
   - gem update --system
   - gem --version
-  -bundle install
+  - bundle install
 script:
   - jekyll build
   - htmlproofer ./_site --check-html
